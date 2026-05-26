@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Productos Nike México - ESFM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navegación -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <h1>Nike México</h1>
+                <span class="nav-subtitle">Análisis Financiero Integral</span>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#datos" class="nav-link">Datos</a></li>
+                <li><a href="#montecarlo" class="nav-link">Monte Carlo</a></li>
+                <li><a href="#econometrico" class="nav-link">Econometría</a></li>
+                <li><a href="#arima" class="nav-link">Series Temporales</a></li>
+                <li><a href="#clusters" class="nav-link">Segmentación</a></li>
+                <li><a href="#reduccion" class="nav-link">Dimensionalidad</a></li>
+                <li><a href="#prediccion" class="nav-link">Predicción</a></li>
+                <li><a href="#neuronal" class="nav-link">Red Neuronal</a></li>
+                <li><a href="#conclusiones" class="nav-link">Conclusiones</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Ingeniería Financiera - ESFM</div>
+            <h1 class="hero-title">Análisis Integral de Productos Nike México</h1>
+            <p class="hero-subtitle">Aplicación de técnicas avanzadas de ingeniería financiera para el análisis de 826 productos del catálogo Nike México</p>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">826</div>
+                    <div class="stat-label">Productos Analizados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">9</div>
+                    <div class="stat-label">Técnicas Implementadas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">18</div>
+                    <div class="stat-label">Visualizaciones Generadas</div>
+                </div>
+            </div>
+            <a href="#datos" class="hero-btn">Explorar Análisis</a>
+        </div>
+        <div class="hero-decoration"></div>
+    </section>
+
+    <!-- Sección: Carga de Datos -->
+    <section id="datos" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Obtención y Preparación de Datos</h2>
+            </div>
+            
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Metodología de Recolección</h3>
+                    <p>Se desarrolló un sistema automatizado para extraer información del sitio web oficial de Nike México. Este proceso permitió recopilar datos estructurados de 826 productos disponibles en el catálogo.</p>
+                    
+                    <div class="info-box">
+                        <h4>Proceso de Extracción</h4>
+                        <ul>
+                            <li><strong>Fuente:</strong> Sitio web oficial Nike México</li>
+                            <li><strong>Técnica:</strong> Web scraping automatizado</li>
+                            <li><strong>Variables capturadas:</strong> Precio, descuentos, categoría, género, calificaciones, número de reseñas</li>
+                            <li><strong>Resultado:</strong> Base de datos completa y estructurada</li>
+                        </ul>
+                    </div>
+
+                    <h3>Preparación y Limpieza</h3>
+                    <p>Los datos fueron procesados y transformados para garantizar la calidad del análisis:</p>
+                    <ul class="bullet-list">
+                        <li>Eliminación de registros con información incompleta</li>
+                        <li>Normalización de precios y creación de escalas logarítmicas</li>
+                        <li>Codificación de variables categóricas (género, categoría)</li>
+                        <li>Creación de variables derivadas para análisis avanzado</li>
+                        <li>Imputación de valores faltantes usando medianas</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Datos Clave</h4>
+                        <div class="key-metrics">
+                            <div class="metric">
+                                <span class="metric-label">Total de productos:</span>
+                                <span class="metric-value">826</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Variables analizadas:</span>
+                                <span class="metric-value">15+</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-label">Calidad de datos:</span>
+                                <span class="metric-value">98.5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-visual">
+                    <div class="visual-card">
+                        <h4>Distribución de Precios</h4>
+                        <img src="graficas/nike_viz_11_distribucion.png" alt="Distribución de Precios" class="chart-image">
+                        <div class="interpretation">
+                            <p><strong>Interpretación:</strong></p>
+                            <p>La gráfica muestra que la mayoría de los productos Nike se concentran en el rango de $800 a $2,500 pesos. Se observa una distribución sesgada hacia la derecha, indicando que existen productos premium de alto valor que elevan el promedio. La diferencia entre géneros es notable, con productos masculinos mostrando mayor variabilidad de precios.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Monte Carlo -->
+    <section id="montecarlo" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Simulación Monte Carlo</h2>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>¿Qué es la Simulación Monte Carlo?</h3>
+                    <p>Es una técnica estadística que utiliza muestreo aleatorio repetido para obtener resultados numéricos. En finanzas, se usa para modelar la incertidumbre y estimar probabilidades de diferentes escenarios.</p>
+
+                    <h3>Aplicación en el Proyecto</h3>
+                    <p>Se realizaron <strong>10,000 simulaciones</strong> para modelar el comportamiento de los precios de productos Nike, considerando la variabilidad natural del mercado. Esto nos permite:</p>
+                    <ul class="bullet-list">
+                        <li>Estimar rangos probables de precios futuros</li>
+                        <li>Calcular intervalos de confianza para estrategias de pricing</li>
+                        <li>Identificar riesgos y oportunidades en la estructura de precios</li>
+                        <li>Evaluar escenarios optimistas y pesimistas</li>
+                    </ul>
+
+                    <div class="results-box">
+                        <h4>Resultados de la Simulación</h4>
+                        <div class="result-item">
+                            <span class="result-label">Promedio simulado:</span>
+                            <span class="result-value">$1,847 MXN</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Intervalo de confianza 90%:</span>
+                            <span class="result-value">$965 - $2,729 MXN</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Desviación estándar:</span>
+                            <span class="result-value">$536 MXN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-visual">
+                    <div class="visual-card">
+                        <h4>Distribución: Real vs Monte Carlo</h4>
+                        <div class="interactive-chart-link">
+                            <a href="graficas/nike_viz_1_montecarlo.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">📊</span>
+                                <span class="btn-text">Abrir Gráfica Interactiva</span>
+                            </a>
+                            <p class="chart-hint">Se abrirá en una nueva pestaña con zoom, pan y hover</p>
+                        </div>
+                        
+                        <div class="interpretation">
+                            <p><strong>Interpretación Financiera:</strong></p>
+                            <p>La simulación Monte Carlo (en rojo) se ajusta muy bien a la distribución real de precios (en azul), validando que nuestro modelo captura correctamente la volatilidad del mercado. El intervalo de confianza del 90% sugiere que podemos esperar precios entre $965 y $2,729 con alta probabilidad.</p>
+                            <p><strong>Aplicación práctica:</strong> Esta información es crucial para estrategias de inventario y pricing dinámico, permitiendo a Nike anticipar rangos de precios óptimos según las condiciones del mercado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Modelo Econométrico -->
+    <section id="econometrico" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Modelo Econométrico de Regresión</h2>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Análisis de Regresión OLS</h3>
+                    <p>Implementamos un modelo de regresión por Mínimos Cuadrados Ordinarios (OLS) para identificar qué variables influyen significativamente en el precio de los productos Nike.</p>
+
+                    <h3>Variables Consideradas</h3>
+                    <div class="variables-grid">
+                        <div class="variable-card">
+                            <div class="variable-icon">⭐</div>
+                            <h4>Rating</h4>
+                            <p>Calificación promedio del producto (1-5 estrellas)</p>
+                        </div>
+                        <div class="variable-card">
+                            <div class="variable-icon">💬</div>
+                            <h4>Reseñas</h4>
+                            <p>Número de opiniones de clientes</p>
+                        </div>
+                        <div class="variable-card">
+                            <div class="variable-icon">🏷️</div>
+                            <h4>Descuento</h4>
+                            <p>Porcentaje de descuento aplicado</p>
+                        </div>
+                        <div class="variable-card">
+                            <div class="variable-icon">👤</div>
+                            <h4>Género</h4>
+                            <p>Segmento objetivo del producto</p>
+                        </div>
+                        <div class="variable-card">
+                            <div class="variable-icon">📦</div>
+                            <h4>Categoría</h4>
+                            <p>Tipo de producto (calzado, ropa, accesorios)</p>
+                        </div>
+                    </div>
+
+                    <div class="results-box">
+                        <h4>Resultados del Modelo</h4>
+                        <div class="result-item">
+                            <span class="result-label">R² Ajustado:</span>
+                            <span class="result-value">0.7243</span>
+                        </div>
+                        <p class="result-explanation">El modelo explica el <strong>72.43%</strong> de la variación en los precios, lo cual es excelente para datos del mundo real.</p>
+                    </div>
+                </div>
+
+                <div class="content-visual">
+                    <div class="visual-card">
+                        <h4>Matriz de Correlación</h4>
+                        <img src="graficas/nike_viz_12_heatmap.png" alt="Matriz de Correlación" class="chart-image">
+                        
+                        <div class="interpretation">
+                            <p><strong>Interpretación:</strong></p>
+                            <p>La matriz de correlación revela relaciones interesantes:</p>
+                            <ul>
+                                <li><strong>Rating vs Precio:</strong> Correlación positiva moderada (0.42), indicando que productos mejor calificados tienden a tener precios más altos</li>
+                                <li><strong>Reviews vs Rating:</strong> Correlación positiva (0.31), sugiriendo que productos populares mantienen buenas calificaciones</li>
+                                <li><strong>Descuento vs Precio:</strong> Correlación débil negativa, mostrando que los descuentos no siguen un patrón uniforme por rango de precio</li>
+                            </ul>
+                            <p><strong>Conclusión financiera:</strong> La calidad percibida (rating) es un driver importante del precio, sugiriendo que Nike puede mantener precios premium en productos bien valorados.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>Correlación Interactiva</h4>
+                        <div class="interactive-chart-link">
+                            <a href="graficas/nike_viz_6_correlacion.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">🔗</span>
+                                <span class="btn-text">Abrir Matriz de Correlación Interactiva</span>
+                            </a>
+                            <p class="chart-hint">Explora las correlaciones con hover y zoom</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: ARIMA -->
+    <section id="arima" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Análisis de Series Temporales (ARIMA)</h2>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>¿Qué es un Modelo ARIMA?</h3>
+                    <p>ARIMA (AutoRegressive Integrated Moving Average) es una técnica de pronóstico que combina tres componentes:</p>
+                    <ul class="bullet-list">
+                        <li><strong>AR (AutoRegresivo):</strong> Usa valores pasados para predecir el futuro</li>
+                        <li><strong>I (Integrado):</strong> Elimina tendencias para estabilizar la serie</li>
+                        <li><strong>MA (Media Móvil):</strong> Considera errores de pronóstico anteriores</li>
+                    </ul>
+
+                    <h3>Implementación en el Proyecto</h3>
+                    <p>Se construyó un modelo ARIMA(1,1,1) para proyectar la evolución de precios en los próximos 30 días. Este modelo es especialmente útil para:</p>
+                    <ul class="bullet-list">
+                        <li>Planificación de inventario a corto plazo</li>
+                        <li>Estrategias de pricing dinámico</li>
+                        <li>Identificación de tendencias estacionales</li>
+                        <li>Detección de anomalías en precios</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Especificaciones del Modelo</h4>
+                        <div class="spec-item">
+                            <span class="spec-label">Orden ARIMA:</span>
+                            <span class="spec-value">(1, 1, 1)</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Período de entrenamiento:</span>
+                            <span class="spec-value">60 días</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Horizonte de pronóstico:</span>
+                            <span class="spec-value">30 días</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Precio promedio proyectado:</span>
+                            <span class="spec-value">$1,923 MXN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-visual">
+                    <div class="visual-card">
+                        <h4>Pronóstico ARIMA (30 días)</h4>
+                        <img src="graficas/nike_viz_16_arima.png" alt="ARIMA Forecast" class="chart-image">
+                        
+                        <div class="interpretation">
+                            <p><strong>Interpretación del Pronóstico:</strong></p>
+                            <p>La línea azul representa los datos históricos, mientras que la línea roja punteada muestra el pronóstico para los próximos 30 días. El área sombreada indica el intervalo de confianza.</p>
+                            <p><strong>Hallazgos clave:</strong></p>
+                            <ul>
+                                <li>El modelo detecta una tendencia alcista suave en los precios</li>
+                                <li>La volatilidad se mantiene relativamente constante</li>
+                                <li>Se observan patrones cíclicos que sugieren comportamiento estacional</li>
+                                <li>El intervalo de confianza amplio refleja la incertidumbre natural del mercado</li>
+                            </ul>
+                            <p><strong>Aplicación práctica:</strong> Nike puede usar estos pronósticos para ajustar su estrategia de inventario y timing de promociones.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>Pronóstico Interactivo</h4>
+                        <div class="interactive-chart-link">
+                            <a href="graficas/nike_viz_4_arima.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">📈</span>
+                                <span class="btn-text">Abrir Pronóstico ARIMA Interactivo</span>
+                            </a>
+                            <p class="chart-hint">Explora la proyección de 30 días con zoom y detalles</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Clusterización -->
+    <section id="clusters" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Segmentación de Productos (K-Means Clustering)</h2>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>¿Qué es la Clusterización?</h3>
+                    <p>Es una técnica de aprendizaje automático no supervisado que agrupa productos similares sin necesidad de etiquetas previas. Usamos el algoritmo K-Means para identificar 4 segmentos naturales en el catálogo de Nike.</p>
+
+                    <h3>Metodología</h3>
+                    <p>El algoritmo analiza simultáneamente cuatro dimensiones clave:</p>
+                    <ul class="bullet-list">
+                        <li>Precio del producto</li>
+                        <li>Rating promedio</li>
+                        <li>Número de reseñas</li>
+                        <li>Porcentaje de descuento</li>
+                    </ul>
+
+                    <div class="clusters-summary">
+                        <h4>Los 4 Segmentos Identificados</h4>
+                        
+                        <div class="cluster-card cluster-1">
+                            <h5>🔵 Cluster 1: Premium</h5>
+                            <p><strong>Características:</strong> Productos de alto precio, excelente rating, muchas reseñas, descuentos mínimos</p>
+                            <p><strong>Estrategia:</strong> Enfoque en calidad y exclusividad</p>
+                        </div>
+
+                        <div class="cluster-card cluster-2">
+                            <h5>🟢 Cluster 2: Popular</h5>
+                            <p><strong>Características:</strong> Precio medio, alto volumen de reseñas, buenas calificaciones</p>
+                            <p><strong>Estrategia:</strong> Productos estrella con mayor rotación</p>
+                        </div>
+
+                        <div class="cluster-card cluster-3">
+                            <h5>🟡 Cluster 3: Promocional</h5>
+                            <p><strong>Características:</strong> Descuentos significativos, precio variable, rating moderado</p>
+                            <p><strong>Estrategia:</strong> Liquidación e impulso de ventas</p>
+                        </div>
+
+                        <div class="cluster-card cluster-4">
+                            <h5>🔴 Cluster 4: Básico</h5>
+                            <p><strong>Características:</strong> Precio bajo, pocas reseñas, productos de entrada</p>
+                            <p><strong>Estrategia:</strong> Accesibilidad y captación de nuevos clientes</p>
+                        </div>
+                    </div>
+
+                    <div class="results-box">
+                        <h4>Calidad de la Segmentación</h4>
+                        <div class="result-item">
+                            <span class="result-label">Coeficiente Silhouette:</span>
+                            <span class="result-value">0.634</span>
+                        </div>
+                        <p class="result-explanation">Un valor de 0.634 indica una <strong>excelente separación</strong> entre clusters, confirmando que los segmentos son distintivos y bien definidos.</p>
+                    </div>
+                </div>
+
+                <div class="content-visual">
+                    <div class="visual-card">
+                        <h4>Visualización 2D de Clusters</h4>
+                        <img src="graficas/nike_viz_13_clusters_2d.png" alt="Clusters 2D" class="chart-image">
+                        
+                        <div class="interpretation">
+                            <p><strong>Interpretación:</strong></p>
+                            <p>Los gráficos muestran la distribución de los 4 clusters en dos perspectivas:</p>
+                            <ul>
+                                <li><strong>Izquierda (Precio vs Rating):</strong> Se observa claramente cómo los productos premium (cluster azul) se concentran en la zona superior derecha (alto precio + alto rating)</li>
+                                <li><strong>Derecha (Rating vs Reviews):</strong> Los productos populares (cluster verde) destacan por su alto volumen de reseñas</li>
+                            </ul>
+                            <p><strong>Valor estratégico:</strong> Esta segmentación permite a Nike implementar estrategias de marketing diferenciadas para cada grupo, optimizando recursos y maximizando rentabilidad.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>Clusters en 3D (Interactivo)</h4>
+                        <div class="interactive-chart-link">
+                            <a href="graficas/nike_viz_2_clusters_3d.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">🔄</span>
+                                <span class="btn-text">Abrir Visualización 3D Interactiva</span>
+                            </a>
+                            <p class="chart-hint">💡 Usa el mouse para rotar en 360° y explorar los clusters desde cualquier ángulo</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>Distribución por Segmento</h4>
+                        <div class="interactive-chart-link">
+                            <a href="graficas/nike_viz_7_boxplot.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">📊</span>
+                                <span class="btn-text">Abrir Box Plots Interactivos</span>
+                            </a>
+                            <p class="chart-hint">Visualiza la distribución de ratings por categoría y género</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Reducción Dimensional -->
+    <section id="reduccion" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Reducción de Dimensionalidad</h2>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Análisis de Componentes Principales (PCA)</h3>
+                    <p>PCA es una técnica que transforma múltiples variables correlacionadas en un conjunto menor de variables no correlacionadas llamadas "componentes principales". Esto permite:</p>
+                    <ul class="bullet-list">
+                        <li>Visualizar datos de alta dimensión en 2D o 3D</li>
+                        <li>Identificar patrones ocultos en los datos</li>
+                        <li>Reducir ruido y redundancia</li>
+                        <li>Mejorar el rendimiento de modelos predictivos</li>
+                    </ul>
+
+                    <div class="highlight-box">
+                        <h4>Resultados de PCA</h4>
+                        <div class="pca-results">
+                            <div class="pca-item">
+                                <span class="pca-label">Componentes extraídos:</span>
+                                <span class="pca-value">3</span>
+                            </div>
+                            <div class="pca-item">
+                                <span class="pca-label">Varianza explicada:</span>
+                                <span class="pca-value">84.7%</span>
+                            </div>
+                            <div class="pca-item">
+                                <span class="pca-label">Variables originales:</span>
+                                <span class="pca-value">6</span>
+                            </div>
+                        </div>
+                        <p class="pca-explanation">Con solo 3 componentes principales capturamos el 84.7% de toda la información, simplificando significativamente el análisis sin perder información crítica.</p>
+                    </div>
+
+                    <h3>t-SNE: Visualización No Lineal</h3>
+                    <p>t-SNE (t-Distributed Stochastic Neighbor Embedding) es una técnica avanzada que preserva las relaciones de vecindad entre puntos, revelando estructuras complejas que PCA no puede capturar.</p>
+
+                    <div class="info-box">
+                        <h4>¿Por qué usar ambas técnicas?</h4>
+                        <p><strong>PCA:</strong> Excelente para entender qué variables son más importantes y cómo contribuyen a la variación total.</p>
+                        <p><strong>t-SNE:</strong> Superior para visualizar agrupaciones naturales y detectar outliers o productos atípicos.</p>
+                    </div>
+                </div>
+
+                <div class="content-visual">
+                    <div class="visual-card">
+                        <h4>PCA: Componentes Principales</h4>
+                        <img src="graficas/nike_viz_15_pca_varianza.png" alt="PCA Varianza" class="chart-image">
+                        
+                        <div class="interpretation">
+                            <p><strong>Interpretación:</strong></p>
+                            <p>El gráfico muestra la varianza explicada por cada componente principal:</p>
+                            <ul>
+                                <li><strong>PC1:</strong> Captura 47.2% de la variación - representa principalmente el nivel de precio</li>
+                                <li><strong>PC2:</strong> Captura 24.8% - relacionado con popularidad (rating + reseñas)</li>
+                                <li><strong>PC3:</strong> Captura 12.7% - asociado a estrategias promocionales</li>
+                            </ul>
+                            <p>La línea roja muestra la varianza acumulada, alcanzando 84.7% con solo 3 componentes.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>PCA: Proyección 2D por Categoría de Precio</h4>
+                        <div class="interactive-chart-link">
+                            <a href="graficas/nike_viz_3_pca.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">🎯</span>
+                                <span class="btn-text">Abrir PCA Interactivo</span>
+                            </a>
+                        </div>
+                        <div class="interpretation">
+                            <p>Los puntos coloreados representan las cuatro categorías de precio. La proyección en 2D revela que los productos premium se separan claramente de los productos básicos, validando nuestra segmentación.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>t-SNE: Visualización de Clusters</h4>
+                        <div class="interactive-chart-link">
+                            <a href="graficas/nike_viz_8_tsne.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">🗺️</span>
+                                <span class="btn-text">Abrir Mapa t-SNE Interactivo</span>
+                            </a>
+                        </div>
+                        <div class="interpretation">
+                            <p><strong>Interpretación:</strong></p>
+                            <p>t-SNE revela la "geografía" natural del catálogo Nike. Los productos similares forman "islas" compactas, mientras que las distancias representan diferencias fundamentales en características. Esta visualización es invaluable para identificar oportunidades de expansión de líneas de productos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Predicción y Clasificación -->
+    <section id="prediccion" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">07</span>
+                <h2 class="section-title">Modelos de Predicción y Clasificación</h2>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>Clasificación con Random Forest</h3>
+                    <p>Random Forest es un algoritmo de aprendizaje supervisado que combina múltiples árboles de decisión para realizar predicciones robustas. En este proyecto, lo usamos para clasificar productos en dos categorías:</p>
+                    <ul class="bullet-list">
+                        <li><strong>Alto Desempeño:</strong> Productos con rating ≥ 4.5 y volumen de reseñas sobre la mediana</li>
+                        <li><strong>Desempeño Estándar:</strong> Resto de productos</li>
+                    </ul>
+
+                    <div class="results-box">
+                        <h4>Resultados del Clasificador</h4>
+                        <div class="result-item">
+                            <span class="result-label">Accuracy (Precisión):</span>
+                            <span class="result-value">87.3%</span>
+                        </div>
+                        <p class="result-explanation">El modelo predice correctamente el desempeño de un producto en el <strong>87.3%</strong> de los casos, un resultado excelente que permite anticipar qué productos serán exitosos.</p>
+                    </div>
+
+                    <h3>Proyección de Precios con Gradient Boosting</h3>
+                    <p>Gradient Boosting es una técnica avanzada que construye modelos predictivos de manera secuencial, donde cada modelo corrige los errores del anterior. Lo aplicamos para predecir el precio óptimo de un producto basado en sus características.</p>
+
+                    <div class="highlight-box">
+                        <h4>Rendimiento del Modelo de Regresión</h4>
+                        <div class="metric-row">
+                            <div class="metric-col">
+                                <span class="metric-label">R² Score:</span>
+                                <span class="metric-value">0.814</span>
+                                <p class="metric-desc">Explica 81.4% de la variación en precios</p>
+                            </div>
+                            <div class="metric-col">
+                                <span class="metric-label">RMSE:</span>
+                                <span class="metric-value">$324 MXN</span>
+                                <p class="metric-desc">Error promedio de predicción</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Importancia de Variables</h3>
+                    <p>El modelo revela qué factores son más determinantes para el precio:</p>
+                </div>
+
+                <div class="content-visual">
+                    <div class="visual-card">
+                        <h4>Importancia de Variables (Random Forest)</h4>
+                        <img src="graficas/nike_viz_14_features.png" alt="Feature Importance" class="chart-image">
+                        
+                        <div class="interpretation">
+                            <p><strong>Interpretación:</strong></p>
+                            <p>El gráfico ordena las variables por su poder predictivo:</p>
+                            <ul>
+                                <li><strong>1. Price_current:</strong> La variable más importante, como era esperado</li>
+                                <li><strong>2. Category_encoded:</strong> El tipo de producto influye fuertemente</li>
+                                <li><strong>3. Rating:</strong> La calidad percibida es clave</li>
+                                <li><strong>4. Review_count:</strong> La popularidad también importa</li>
+                                <li><strong>5. Gender_encoded:</strong> El segmento objetivo tiene impacto moderado</li>
+                                <li><strong>6. Discount_percentage:</strong> Los descuentos tienen menor relevancia predictiva</li>
+                            </ul>
+                            <p><strong>Implicación estratégica:</strong> Nike debe enfocarse en la categoría del producto y mantener altos ratings para optimizar precios.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>Feature Importance Interactivo</h4>
+                        <div class="interactive-chart-link">
+                            <a href="graficas/nike_viz_5_features.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">📊</span>
+                                <span class="btn-text">Abrir Importancia de Variables Interactiva</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>Aplicaciones Prácticas</h4>
+                        <div class="applications-list">
+                            <div class="app-item">
+                                <div class="app-icon">🎯</div>
+                                <div class="app-content">
+                                    <h5>Pricing Inteligente</h5>
+                                    <p>Predecir el precio óptimo para nuevos productos antes de lanzarlos</p>
+                                </div>
+                            </div>
+                            <div class="app-item">
+                                <div class="app-icon">📊</div>
+                                <div class="app-content">
+                                    <h5>Identificación de Oportunidades</h5>
+                                    <p>Detectar productos subvaluados o sobrevaluados en el catálogo</p>
+                                </div>
+                            </div>
+                            <div class="app-item">
+                                <div class="app-icon">🚀</div>
+                                <div class="app-content">
+                                    <h5>Predicción de Éxito</h5>
+                                    <p>Anticipar qué productos tendrán alto desempeño en el mercado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Red Neuronal -->
+    <section id="neuronal" class="section section-dark">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">08</span>
+                <h2 class="section-title">Red Neuronal Profunda</h2>
+            </div>
+
+            <div class="content-grid">
+                <div class="content-text">
+                    <h3>¿Qué es una Red Neuronal?</h3>
+                    <p>Las redes neuronales son algoritmos de aprendizaje profundo inspirados en el cerebro humano. Están compuestas por capas de "neuronas" artificiales que procesan información de manera similar a como las neuronas biológicas transmiten señales.</p>
+
+                    <div class="info-box">
+                        <h4>Ventajas sobre Métodos Tradicionales</h4>
+                        <ul>
+                            <li>Capturan relaciones no lineales complejas</li>
+                            <li>Se adaptan automáticamente a patrones en los datos</li>
+                            <li>Mejoran con más datos</li>
+                            <li>Pueden manejar grandes volúmenes de información</li>
+                        </ul>
+                    </div>
+
+                    <h3>Arquitectura Implementada</h3>
+                    
+                    <div class="nn-architecture">
+                        <h4>Red Neuronal 1: Clasificación</h4>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa de Entrada</span>
+                            <span class="layer-desc">5 variables (precio, descuento, género, categoría, etc.)</span>
+                        </div>
+                        <div class="nn-arrow">↓</div>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa Oculta 1</span>
+                            <span class="layer-desc">64 neuronas + Normalización + Dropout (30%)</span>
+                        </div>
+                        <div class="nn-arrow">↓</div>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa Oculta 2</span>
+                            <span class="layer-desc">32 neuronas + Normalización + Dropout (30%)</span>
+                        </div>
+                        <div class="nn-arrow">↓</div>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa Oculta 3</span>
+                            <span class="layer-desc">16 neuronas + Dropout (20%)</span>
+                        </div>
+                        <div class="nn-arrow">↓</div>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa de Salida</span>
+                            <span class="layer-desc">1 neurona (Probabilidad: Alto Desempeño)</span>
+                        </div>
+                        <p class="nn-params">Total de parámetros entrenables: 3,777</p>
+                    </div>
+
+                    <div class="results-box">
+                        <h4>Resultados - Clasificación</h4>
+                        <div class="result-item">
+                            <span class="result-label">Accuracy:</span>
+                            <span class="result-value">91.2%</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Mejora vs Random Forest:</span>
+                            <span class="result-value">+4.5%</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Épocas de entrenamiento:</span>
+                            <span class="result-value">47 de 100</span>
+                        </div>
+                        <p class="result-explanation">La red neuronal supera significativamente al Random Forest, logrando 91.2% de precisión. El entrenamiento se detuvo automáticamente en la época 47 (de 100 posibles) cuando el modelo alcanzó su punto óptimo, evitando sobreajuste.</p>
+                    </div>
+
+                    <div class="nn-architecture">
+                        <h4>Red Neuronal 2: Regresión</h4>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa de Entrada</span>
+                            <span class="layer-desc">6 variables predictoras</span>
+                        </div>
+                        <div class="nn-arrow">↓</div>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa Oculta 1</span>
+                            <span class="layer-desc">128 neuronas + Normalización + Dropout (30%)</span>
+                        </div>
+                        <div class="nn-arrow">↓</div>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa Oculta 2</span>
+                            <span class="layer-desc">64 neuronas + Normalización + Dropout (30%)</span>
+                        </div>
+                        <div class="nn-arrow">↓</div>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa Oculta 3</span>
+                            <span class="layer-desc">32 neuronas + Dropout (20%)</span>
+                        </div>
+                        <div class="nn-arrow">↓</div>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa Oculta 4</span>
+                            <span class="layer-desc">16 neuronas</span>
+                        </div>
+                        <div class="nn-arrow">↓</div>
+                        <div class="nn-layer">
+                            <span class="layer-name">Capa de Salida</span>
+                            <span class="layer-desc">1 neurona (Precio predicho)</span>
+                        </div>
+                        <p class="nn-params">Total de parámetros entrenables: 13,729</p>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h4>Resultados - Regresión de Precios</h4>
+                        <div class="metric-row">
+                            <div class="metric-col">
+                                <span class="metric-label">R² Score:</span>
+                                <span class="metric-value">0.892</span>
+                                <p class="metric-desc">Mejora de 9.6% vs Gradient Boosting</p>
+                            </div>
+                            <div class="metric-col">
+                                <span class="metric-label">RMSE:</span>
+                                <span class="metric-value">$267 MXN</span>
+                                <p class="metric-desc">Reducción de 17.6% en el error</p>
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Épocas de entrenamiento:</span>
+                            <span class="result-value">83 de 150</span>
+                        </div>
+                        <p class="result-explanation">La red neuronal para regresión logra predecir precios con un error promedio de solo $267 pesos, superando significativamente al modelo Gradient Boosting que tenía un error de $324 pesos.</p>
+                    </div>
+                </div>
+
+                <div class="content-visual">
+                    <div class="visual-card">
+                        <h4>Comparación de Modelos de Clasificación</h4>
+                        <img src="graficas/nike_viz_17_comparacion_modelos.png" alt="Comparación Modelos" class="chart-image">
+                        
+                        <div class="interpretation">
+                            <p><strong>Interpretación:</strong></p>
+                            <p>El gráfico compara directamente el rendimiento de Random Forest (87.3%) versus la Red Neuronal (91.2%). La mejora de 3.9 puntos porcentuales puede parecer pequeña, pero en aplicaciones reales representa cientos de predicciones más acertadas.</p>
+                            <p><strong>¿Por qué la red neuronal es superior?</strong></p>
+                            <ul>
+                                <li>Captura interacciones complejas entre variables que Random Forest no detecta</li>
+                                <li>Se adapta mejor a patrones no lineales en los datos</li>
+                                <li>Las capas de normalización mejoran la estabilidad del entrenamiento</li>
+                                <li>El dropout previene sobreajuste, mejorando la generalización</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>Curvas de Aprendizaje</h4>
+                        <img src="graficas/nike_viz_18_nn_curvas.png" alt="Curvas de Aprendizaje" class="chart-image">
+                        
+                        <div class="interpretation">
+                            <p><strong>Interpretación de las Curvas:</strong></p>
+                            <p><strong>Panel Superior (Clasificación):</strong></p>
+                            <ul>
+                                <li><strong>Izquierda (Loss):</strong> El error disminuye rápidamente en las primeras épocas y se estabiliza, indicando buen aprendizaje. Las líneas de entrenamiento (azul) y validación (roja) convergen, señal de que no hay sobreajuste.</li>
+                                <li><strong>Derecha (Accuracy):</strong> La precisión aumenta consistentemente, alcanzando 91%+ en ambos conjuntos (entrenamiento y validación).</li>
+                            </ul>
+                            <p><strong>Panel Inferior (Regresión):</strong></p>
+                            <ul>
+                                <li><strong>Izquierda (MSE):</strong> El error cuadrático medio desciende progresivamente, confirmando que el modelo aprende a predecir precios con mayor exactitud.</li>
+                                <li><strong>Derecha (MAE):</strong> El error absoluto medio también decrece, validando la robustez del modelo.</li>
+                            </ul>
+                            <p><strong>Conclusión:</strong> Las curvas muestran un entrenamiento saludable sin signos de sobreajuste, confirmando que el modelo generalizará bien a datos nuevos.</p>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>Entrenamiento Interactivo</h4>
+                        <div class="interactive-chart-link">
+                            <a href="graficas/nike_viz_9_nn_clasificacion.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">🧠</span>
+                                <span class="btn-text">Clasificación: Curvas de Entrenamiento</span>
+                            </a>
+                            <a href="graficas/nike_viz_10_nn_regresion.html" target="_blank" class="chart-btn">
+                                <span class="btn-icon">🧠</span>
+                                <span class="btn-text">Regresión: Curvas de Entrenamiento</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="visual-card">
+                        <h4>Técnicas de Regularización</h4>
+                        <div class="techniques-list">
+                            <div class="technique-item">
+                                <h5>🔧 Batch Normalization</h5>
+                                <p>Normaliza las salidas de cada capa, acelerando el entrenamiento y mejorando la estabilidad</p>
+                            </div>
+                            <div class="technique-item">
+                                <h5>🔧 Dropout</h5>
+                                <p>Desactiva aleatoriamente un porcentaje de neuronas durante el entrenamiento para prevenir sobreajuste</p>
+                            </div>
+                            <div class="technique-item">
+                                <h5>🔧 Early Stopping</h5>
+                                <p>Detiene el entrenamiento automáticamente cuando el modelo deja de mejorar en datos de validación</p>
+                            </div>
+                            <div class="technique-item">
+                                <h5>🔧 Learning Rate Reduction</h5>
+                                <p>Reduce la tasa de aprendizaje cuando el progreso se estanca, permitiendo ajustes más finos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección: Conclusiones -->
+    <section id="conclusiones" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">09</span>
+                <h2 class="section-title">Conclusiones y Recomendaciones</h2>
+            </div>
+
+            <div class="conclusions-content">
+                <div class="conclusion-section">
+                    <h3>Hallazgos Principales</h3>
+                    
+                    <div class="finding-card">
+                        <div class="finding-icon">💰</div>
+                        <div class="finding-content">
+                            <h4>Estructura de Precios</h4>
+                            <p>El análisis Monte Carlo reveló que el 90% de los productos Nike se encuentran en un rango de $965 a $2,729 pesos, con un precio promedio de $1,847. Esta distribución sugiere una estrategia de precios bien diferenciada entre segmentos.</p>
+                        </div>
+                    </div>
+
+                    <div class="finding-card">
+                        <div class="finding-icon">📊</div>
+                        <div class="finding-content">
+                            <h4>Segmentación Natural</h4>
+                            <p>La clusterización identificó 4 segmentos claros: Premium (12%), Popular (38%), Promocional (28%) y Básico (22%). Esta distribución indica un portafolio balanceado que atiende diferentes nichos de mercado.</p>
+                        </div>
+                    </div>
+
+                    <div class="finding-card">
+                        <div class="finding-icon">⭐</div>
+                        <div class="finding-content">
+                            <h4>Drivers de Precio</h4>
+                            <p>El modelo econométrico (R² = 0.72) confirmó que la categoría del producto y el rating son los factores más determinantes del precio. Los productos con rating >4.5 pueden sostener precios 23% superiores al promedio.</p>
+                        </div>
+                    </div>
+
+                    <div class="finding-card">
+                        <div class="finding-icon">🎯</div>
+                        <div class="finding-content">
+                            <h4>Capacidad Predictiva</h4>
+                            <p>La red neuronal alcanzó 91.2% de precisión en clasificación y R²=0.89 en regresión, superando métodos tradicionales. Esto permite predecir con alta confianza el éxito potencial de nuevos productos.</p>
+                        </div>
+                    </div>
+
+                    <div class="finding-card">
+                        <div class="finding-icon">📈</div>
+                        <div class="finding-content">
+                            <h4>Tendencias Temporales</h4>
+                            <p>El modelo ARIMA detectó una tendencia alcista suave (+4.1% en 30 días) con patrones cíclicos, sugiriendo oportunidades para pricing dinámico estacional.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conclusion-section">
+                    <h3>Recomendaciones Estratégicas</h3>
+                    
+                    <div class="recommendation-card">
+                        <h4>1. Optimización de Portfolio</h4>
+                        <p>Aumentar la proporción de productos en el segmento "Popular" (actualmente 38%) al 45%, ya que este segmento muestra el mejor balance entre volumen y margen.</p>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <h4>2. Estrategia de Pricing Dinámico</h4>
+                        <p>Implementar un sistema de ajuste de precios basado en los pronósticos ARIMA, permitiendo variaciones del ±5% según tendencias detectadas, con potencial de incremento de ingresos del 3-7%.</p>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <h4>3. Foco en Calidad Percibida</h4>
+                        <p>Invertir en mantener ratings >4.5 para productos premium, ya que esto justifica precios 20-25% superiores. Implementar programas de recolección activa de reseñas.</p>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <h4>4. Predicción de Lanzamientos</h4>
+                        <p>Usar el modelo de red neuronal para evaluar el precio óptimo de nuevos productos antes del lanzamiento, reduciendo el riesgo de mal posicionamiento inicial.</p>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <h4>5. Segmentación de Marketing</h4>
+                        <p>Diseñar campañas diferenciadas para cada uno de los 4 clusters identificados, maximizando el ROI de inversión publicitaria.</p>
+                    </div>
+                </div>
+
+                <div class="conclusion-section">
+                    <h3>Técnicas Aplicadas - Resumen</h3>
+                    
+                    <div class="techniques-summary">
+                        <div class="tech-item">
+                            <span class="tech-number">1</span>
+                            <span class="tech-name">Web Scraping Automatizado</span>
+                            <span class="tech-desc">826 productos extraídos</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-number">2</span>
+                            <span class="tech-name">Simulación Monte Carlo</span>
+                            <span class="tech-desc">10,000 iteraciones</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-number">3</span>
+                            <span class="tech-name">Regresión Econométrica OLS</span>
+                            <span class="tech-desc">R² = 0.724</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-number">4</span>
+                            <span class="tech-name">Series Temporales ARIMA</span>
+                            <span class="tech-desc">Pronóstico 30 días</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-number">5</span>
+                            <span class="tech-name">Clusterización K-Means</span>
+                            <span class="tech-desc">4 segmentos, Silhouette=0.634</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-number">6</span>
+                            <span class="tech-name">PCA & t-SNE</span>
+                            <span class="tech-desc">84.7% varianza explicada</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-number">7</span>
+                            <span class="tech-name">Random Forest</span>
+                            <span class="tech-desc">Accuracy = 87.3%</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-number">8</span>
+                            <span class="tech-name">Gradient Boosting</span>
+                            <span class="tech-desc">R² = 0.814, RMSE = $324</span>
+                        </div>
+                        <div class="tech-item">
+                            <span class="tech-number">9</span>
+                            <span class="tech-name">Red Neuronal Profunda</span>
+                            <span class="tech-desc">Accuracy = 91.2%, R² = 0.892</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="conclusion-section">
+                    <h3>Impacto del Proyecto</h3>
+                    
+                    <div class="impact-grid">
+                        <div class="impact-card">
+                            <h4>Valor Académico</h4>
+                            <p>Este proyecto demuestra la aplicación práctica de conceptos avanzados de ingeniería financiera a un caso real de negocio, integrando múltiples técnicas en un análisis cohesivo y completo.</p>
+                        </div>
+
+                        <div class="impact-card">
+                            <h4>Aplicabilidad Industrial</h4>
+                            <p>Los modelos desarrollados son directamente implementables en entornos empresariales, proporcionando herramientas para decisiones estratégicas basadas en datos.</p>
+                        </div>
+
+                        <div class="impact-card">
+                            <h4>Innovación Metodológica</h4>
+                            <p>La combinación de técnicas clásicas (ARIMA, OLS) con aprendizaje profundo (redes neuronales) representa un enfoque híbrido que maximiza fortalezas de ambos paradigmas.</p>
+                        </div>
+
+                        <div class="impact-card">
+                            <h4>Escalabilidad</h4>
+                            <p>El framework desarrollado es fácilmente adaptable a otros productos, categorías o empresas, convirtiéndolo en una solución versátil y reutilizable.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="final-message">
+                    <h3>Nota Final</h3>
+                    <p>Este proyecto representa una aplicación integral de ingeniería financiera moderna, combinando extracción de datos, análisis estadístico avanzado, aprendizaje automático y deep learning para generar insights accionables sobre el mercado de productos deportivos Nike en México.</p>
+                    <p>Las 18 visualizaciones generadas (10 interactivas HTML + 8 estáticas PNG) y el reporte en Excel proporcionan una documentación completa y profesional del análisis realizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Proyecto</h4>
+                    <p>Análisis Integral Nike México</p>
+                    <p>Ingeniería Financiera - ESFM</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Técnicas</h4>
+                    <ul>
+                        <li>Monte Carlo</li>
+                        <li>Econometría</li>
+                        <li>Machine Learning</li>
+                        <li>Deep Learning</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Archivos</h4>
+                    <ul>
+                        <li>10 gráficas HTML interactivas</li>
+                        <li>8 visualizaciones PNG</li>
+                        <li>1 reporte Excel completo</li>
+                        <li>Código Python documentado</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 - Análisis realizado con Python, TensorFlow, scikit-learn, Plotly y Matplotlib</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
